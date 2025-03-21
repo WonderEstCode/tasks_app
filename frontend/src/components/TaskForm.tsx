@@ -28,14 +28,12 @@ export const TaskForm: React.FC<TaskFormProps> = ({
       description?: string;
     } = {};
 
-    // Validar título
     if (!title.trim()) {
       newErrors.title = "El título es requerido";
     } else if (title.length > 100) {
       newErrors.title = `El título excede los 100 caracteres (${title.length}/100)`;
     }
 
-    // Validar descripción
     if (description.length > 200) {
       newErrors.description = `La descripción excede los 200 caracteres (${description.length}/200)`;
     }
@@ -68,7 +66,6 @@ export const TaskForm: React.FC<TaskFormProps> = ({
     const value = e.target.value;
     setTitle(value);
 
-    // Reset error when user starts typing
     if (errors.title) {
       setErrors((prev) => ({ ...prev, title: undefined }));
     }
@@ -80,7 +77,6 @@ export const TaskForm: React.FC<TaskFormProps> = ({
     const value = e.target.value;
     setDescription(value);
 
-    // Reset error when user starts typing
     if (errors.description) {
       setErrors((prev) => ({ ...prev, description: undefined }));
     }
