@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 min-h-screen;
+  }
+}
+
+.glass-effect {
+  @apply bg-white/80 dark:bg-slate-800/80 backdrop-blur-lg;
+}
+
+.textarea-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.textarea-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.textarea-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-blue-500/50 rounded-full hover:bg-blue-600/50 transition-colors;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
