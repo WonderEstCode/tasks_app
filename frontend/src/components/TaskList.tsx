@@ -93,6 +93,7 @@ export const TaskList: React.FC<TaskListProps> = ({
                   <div className="space-y-2">
                     <input
                       type="text"
+                      maxLength={100}
                       value={editingTask.title}
                       onChange={(e) =>
                         setEditingTask({
@@ -111,6 +112,7 @@ export const TaskList: React.FC<TaskListProps> = ({
                         })
                       }
                       rows={4}
+                      maxLength={200}
                       className="text-white w-full px-3 py-1 rounded-lg bg-white/50 dark:bg-slate-700/50 border border-slate-200/20 dark:border-slate-700/50 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900 outline-none resize-none"
                     />
                     <div className="flex gap-2 justify-end">

@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { Task, TaskUpdateData } from "./types";
 import { TaskList } from "./components/TaskList";
 import { TaskForm } from "./components/TaskForm";
-import { CheckSquare, Plus, ClipboardList } from "lucide-react";
+import { CheckSquare, Plus, ClipboardList, X } from "lucide-react";
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -225,8 +225,15 @@ function App() {
             </header>
 
             {error && (
-              <div className="mb-4 p-4 bg-red-100 text-red-700 rounded-lg">
-                {error}
+              <div className="mb-4 p-4 bg-red-100 text-red-700 rounded-lg flex justify-between items-center">
+                <span>{error}</span>
+                <button
+                  onClick={() => setError(null)}
+                  className="ml-4 text-red-700 hover:text-red-900"
+                  aria-label="Cerrar mensaje de error"
+                >
+                  <X size={20} />
+                </button>
               </div>
             )}
 
